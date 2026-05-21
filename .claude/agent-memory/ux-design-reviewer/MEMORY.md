@@ -1,0 +1,1 @@
+- [프로젝트 UX 패턴 및 구현 결정](project_ux_patterns.md) — Toast 시스템 구조, Cart/Login/Home UX 결정, autoComplete 규칙

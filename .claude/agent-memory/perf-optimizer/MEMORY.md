@@ -1,0 +1,1 @@
+- [Project perf patterns](project_perf_patterns.md) — 2026-05-18 완료된 9개 성능 최적화 목록 및 핵심 패턴 (selector, localStorage, 상수 통합)
