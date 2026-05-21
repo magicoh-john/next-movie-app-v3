@@ -9,7 +9,11 @@
       "mcp__plugin_playwright_playwright__browser_network_requests",
       "mcp__plugin_playwright_playwright__browser_network_request",
       "Bash(Remove-Item \"c:\\\\project\\\\next-movie-app-completed\\\\src\\\\actions\\\\auth.ts\" -Force)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npx tsx -e ' *)",
+      "Bash(set PGPASSWORD=1234)",
+      "Bash(psql -U postgres -h localhost -d movie_app -c \"\\\\d users\")",
+      "Bash(psql -U postgres -h localhost -d movie_app -c \"SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'users' ORDER BY ordinal_position;\")"
     ]
   }
 }

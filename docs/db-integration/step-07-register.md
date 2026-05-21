@@ -141,6 +141,11 @@ export const registerSchema = z
 export type RegisterFormValues = z.infer<typeof registerSchema>;
 ```
 
+**`z.infer` 코드 설명:**
+우리는 방금 Zod를 사용해서 `registerSchema`라는 **"검사 규칙"**을 만들었습니다. (예: 이메일은 문자열이어야 하고, 비밀번호는 8자 이상이어야 한다 등)
+그런데 TypeScript 환경에서 폼(Form) 컴포넌트를 만들려면, 이 폼에 어떤 데이터들이 들어오는지 정의해 주는 **"타입(Type)"**이 또 필요합니다.
+이때 `z.infer<typeof registerSchema>`를 사용하면 우리가 작성한 Zod 검사 규칙을 바탕으로 순수한 TypeScript 타입을 자동으로 뽑아내줍니다. 즉, 타입을 두 번 중복해서 작성할 필요 없이, 이 한 줄로 검사 규칙과 타입을 항상 동기화된 상태로 유지할 수 있게 해주는 유용한 코드입니다.
+
 `refine()` 은 두 필드를 비교하는 커스텀 검증입니다.
 `password`와 `confirmPassword`가 다르면 `confirmPassword` 필드에 오류를 표시합니다.
 
