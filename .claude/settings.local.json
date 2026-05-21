@@ -13,7 +13,10 @@
       "Bash(npx tsx -e ' *)",
       "Bash(set PGPASSWORD=1234)",
       "Bash(psql -U postgres -h localhost -d movie_app -c \"\\\\d users\")",
-      "Bash(psql -U postgres -h localhost -d movie_app -c \"SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'users' ORDER BY ordinal_position;\")"
+      "Bash(psql -U postgres -h localhost -d movie_app -c \"SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'users' ORDER BY ordinal_position;\")",
+      "WebFetch(domain:www.data.go.kr)",
+      "WebSearch",
+      "WebFetch(domain:www.kobis.or.kr)"
     ]
   }
 }

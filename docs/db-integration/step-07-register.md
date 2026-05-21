@@ -113,6 +113,33 @@ password    VARCHAR(255) NOT NULL,
 password_hash  VARCHAR(255) NOT NULL,
 ```
 
+**`src/lib/auth.ts` 도 반드시 같이 수정합니다.**
+
+DB 컬럼 이름이 바뀌었으므로, 이를 조회하는 코드도 동시에 바꿔야 합니다.
+이 수정을 빠뜨리면 로그인 시 `column "password" does not exist` 오류가 발생합니다.
+
+수정할 곳은 두 군데입니다.
+
+**① `DbUser` 인터페이스 (14~15번 줄)**
+
+```ts
+// 변경 전
+password: string;
+
+// 변경 후
+password_hash: string;
+```
+
+**② SELECT 쿼리 (37번 줄)**
+
+```ts
+// 변경 전
+"SELECT id, email, name, password FROM users WHERE email = $1",
+
+// 변경 후
+"SELECT id, email, name, password_hash FROM users WHERE email = $1",
+```
+
 ---
 
 ### 4. registerSchema 추가
